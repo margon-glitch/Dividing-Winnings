@@ -1,0 +1,33 @@
+/* Program name: mgbdividingwinnings.cpp
+* Author: Marco Gonzalez
+* Date last updated: 8/26/2024
+* Purpose: Dividing Winnings
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    double jackpot;
+    int numWinners;
+    
+    cout << "Enter the jackpot amount: ";
+    cin >> jackpot;
+
+    cout << "Enter the number of winners: ";
+    cin >> numWinners;
+
+    if (numWinners < 1) {
+        cout << "Number of winners must be at least 1." << endl;
+        return 1;
+    }
+
+    double firstWinnerShare = jackpot / (numWinners + 1);
+    double otherWinnersShare = firstWinnerShare / 2;
+
+    cout << "The first winner gets: $" << firstWinnerShare * 2 << endl;
+    cout << "All the other winners get: $" << otherWinnersShare << endl;
+
+    return 0;
+}
